@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     observeElements();
     addParallaxEffect();
     setupCourseModals();
+    setupHamburgerMenu();
 });
 
 // ========================================
@@ -557,6 +558,36 @@ function setupCourseModals() {
             modal.classList.remove('show');
             document.body.style.overflow = 'auto';
         }
+    });
+}
+
+// ========================================
+// HAMBURGER MENU
+// ========================================
+
+function setupHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const navItems = navLinks.querySelectorAll('a');
+
+    // Toggle menu
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Cerrar menu al hacer click en un enlace
+    navItems.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Cerrar menu al hacer scroll
+    window.addEventListener('scroll', function() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
     });
 }
 

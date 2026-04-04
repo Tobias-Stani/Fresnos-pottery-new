@@ -130,12 +130,52 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    width: 100%;
+    position: relative;
 }
 
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
     animation: pulse 2s infinite;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: auto;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    gap: 5px;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 2.5px;
+    background-color: var(--text-light);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .nav-links {
@@ -270,6 +310,8 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Secciones */
@@ -809,49 +851,487 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 1.5rem;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    section {
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header y Nav */
+    header {
+        padding: 1rem 0;
+    }
+
+    nav {
+        padding: 0 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+        line-height: 1;
+        min-width: fit-content;
+    }
+
+    .hamburger {
+        display: flex;
     }
 
     .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .about-content,
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .cta-buttons {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
         flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 999;
+        list-style: none;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: none;
     }
 
-    .btn {
-        width: 100%;
+    .nav-links.active {
+        max-height: 250px;
+        display: flex;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: var(--accent-color);
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    /* General */
+    .container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    section {
+        padding: 2.5rem 1rem;
     }
 
     section h2 {
         font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 3rem 1rem;
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.3rem;
     }
 
     .about-image {
-        height: 250px;
+        height: 220px;
+        font-size: 3rem;
+        border-radius: 8px;
+    }
+
+    .about-features li {
+        padding: 0.6rem 0;
+        padding-left: 1.8rem;
+        font-size: 0.95rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Courses Grid */
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .course-card {
+        border-radius: 8px;
+    }
+
+    .course-image {
+        height: 150px;
         font-size: 3rem;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
+    .course-card h3 {
+        font-size: 1.15rem;
+        padding: 1rem 1rem 0.5rem;
     }
 
+    .course-card p {
+        padding: 0 1rem;
+        font-size: 0.9rem;
+    }
+
+    .course-price {
+        padding: 0.8rem 1rem 0;
+        font-size: 1.3rem;
+    }
+
+    .course-card .btn {
+        margin: 0.8rem 1rem 1rem;
+        width: auto;
+    }
+
+    /* Contact Section */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-item {
+        padding: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-item h4 {
+        font-size: 0.95rem;
+    }
+
+    .whatsapp-btn,
+    .instagram-btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Form */
+    form {
+        animation: none;
+    }
+
+    .form-group {
+        margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .modal-body h2 {
+        font-size: 1.4rem;
+    }
+
+    .modal-body > p {
+        font-size: 0.95rem;
+    }
+
+    .modal-details {
+        padding: 1.2rem;
+    }
+
+    .modal-details ul {
+        font-size: 0.9rem;
+    }
+
+    .modal-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .info-item {
+        padding: 1rem;
+    }
+
+    .close {
+        right: 1rem;
+        font-size: 1.8rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    /* Scroll to top */
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header */
+    header {
+        padding: 1rem 0;
+    }
+
+    nav {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+    }
+
+    .nav-links {
+        gap: 0.3rem;
+        font-size: 0.8rem;
+    }
+
+    .nav-links a {
+        padding-bottom: 3px;
+    }
+
+    /* General */
+    .container {
+        padding: 0 0.8rem;
+    }
+
+    section {
+        padding: 2rem 0.8rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 2rem 0.8rem;
+        min-height: 350px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .cta-buttons {
+        gap: 0.6rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* About */
+    .about-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .about-image {
+        height: 180px;
+        font-size: 2.5rem;
+    }
+
+    .about-features {
+        margin-top: 1rem;
+    }
+
+    .about-features li {
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Services */
+    .service-card {
+        padding: 1.2rem;
+    }
+
+    .service-icon {
+        font-size: 2.2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-card p {
+        font-size: 0.85rem;
+    }
+
+    /* Courses */
+    .course-image {
+        height: 130px;
+        font-size: 2.5rem;
+    }
+
+    .course-card h3 {
+        font-size: 1.1rem;
+        padding: 0.8rem 0.8rem 0.3rem;
+    }
+
+    .course-card p {
+        padding: 0 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .course-price {
+        padding: 0.6rem 0.8rem 0;
+        font-size: 1.2rem;
+    }
+
+    .course-card .btn {
+        margin: 0.6rem 0.8rem 0.8rem;
+    }
+
+    /* Contact */
+    .contact-item {
+        padding: 1rem;
+    }
+
+    .whatsapp-btn,
+    .instagram-btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    /* Form */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 98%;
+        padding: 1.2rem;
+    }
+
+    .modal-body h2 {
+        font-size: 1.3rem;
+    }
+
+    .close {
+        font-size: 1.6rem;
+    }
+
+    .modal-info {
+        gap: 0.8rem;
+    }
+
+    .info-item {
+        padding: 0.8rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1rem 0.8rem;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+    }
+
+    /* Scroll to top */
     .scroll-to-top {
         width: 40px;
         height: 40px;
-        font-size: 1.2rem;
+        font-size: 1rem;
+        bottom: 1rem;
+        right: 1rem;
     }
 }
