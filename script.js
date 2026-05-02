@@ -1,598 +1,268 @@
-// ========================================
-// ANIMACIONES AL CARGAR LA PÁGINA
-// ========================================
+/* === COURSE DATA === */
+const courses = {
+  'materias-primas': {
+    tag: 'Seminario sincrónico · 30/5/2026',
+    title: 'Materias Primas',
+    img: 'https://d22fxaf9t8d39k.cloudfront.net/a8e685069862c7ea3c77e73c411b84d8b601af53aaa857be0d943e8b0254efbb452744.png',
+    desc: '¿Te frustra que tus piezas se comporten de forma impredecible? Este seminario enseña los procesos físicos y químicos desde la extracción de la arcilla hasta las transformaciones en el horno. Pasás de adivinar a decidir.',
+    modules: [
+      'Introducción a los orígenes geológicos',
+      'Materias primas plásticas',
+      'Características de las arcillas',
+      'Materiales de carga (agregados)',
+      'Materias primas indeseables',
+      'Agentes químicos',
+      'Comportamiento de materias primas',
+      'Reacciones durante la cocción',
+      'Interpretación de datos técnicos y curvas de cocción',
+    ],
+    priceWas: '$90.000',
+    price: '$65.000 ARS',
+    url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/seminario-sincronico-materias-primas-3052026',
+  },
+  'esmaltes': {
+    tag: 'Autogestivo · On demand',
+    title: 'Esmaltes',
+    img: 'https://d22fxaf9t8d39k.cloudfront.net/06b88e4e750bdf37010305c87351e911d1d28cee106ac55b1941d6b2cc770fa5452744.jpg',
+    desc: 'Atacá el craqueado, burbujas y resultados inconsistentes entendiendo cómo interactúan los componentes de óxidos, en lugar de seguir recetas ciegamente.',
+    modules: [
+      'Introducción a los esmaltes',
+      'Propiedades físicas',
+      'Propiedades químicas',
+      'Propiedades ópticas',
+      'Materias primas',
+      'Formulación de esmaltes',
+      'Solución de defectos',
+      'Laboratorio de control de calidad',
+    ],
+    priceWas: '$120.000',
+    price: '$90.000 ARS',
+    url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/esmaltes-individual',
+  },
+  'pastas': {
+    tag: 'Autogestivo · On demand',
+    title: 'Formulación de Pastas',
+    img: 'https://d22fxaf9t8d39k.cloudfront.net/a3eead5decc0a376e1a76298f8648d48da3cb150278d0e2f09aea46286a4b005452744.jpg',
+    desc: 'Ingeniería de materiales para crear arcillas propias en lugar de depender de productos comerciales. Cubrís selección de materias primas por función y diagramas de fase para predecir el comportamiento de mezclas.',
+    modules: [
+      'Fundamentos de la formulación',
+      'Criterios reológicos',
+      'Criterios funcionales',
+      'Diagramas de fase binarios y ternarios',
+      'Materias primas: plásticos, agregados, fundentes, texturizantes, aditivos',
+      'Clasificación: loza, gres, porcelana, pastas especiales',
+    ],
+    priceWas: '$120.000',
+    price: '$90.000 ARS',
+    url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/formulacion-de-pastas-individual',
+  },
+  'cristalinos': {
+    tag: 'Autogestivo · On demand',
+    title: 'Esmaltes Cristalinos',
+    img: 'https://d22fxaf9t8d39k.cloudfront.net/c4979bc379da5ba98c3a234ce1225cfa63889060d85c729236774e9c245ee0c1452744.jpg',
+    desc: '"Lograr cristales definidos no es cuestión de suerte, sino de entender cómo los átomos se acomodan en el horno." Macrocristales desde una perspectiva científica.',
+    modules: [
+      'Esmaltes: definición, tipos, diferencias',
+      'Estructuras cristalinas y efectos de la cristalización',
+      'Materias primas y agentes nucleantes',
+      'Parámetros de control: temperatura, reología, especies químicas',
+      'Curvas de cocción: microcristales, macrocristales, efectos metálicos',
+    ],
+    priceWas: '$120.000',
+    price: '$90.000 ARS',
+    url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/esmaltes-cristalinos-individual',
+  },
+  'hornos': {
+    tag: 'Autogestivo · On demand',
+    title: 'Hornos y Horneadas',
+    img: 'https://d22fxaf9t8d39k.cloudfront.net/fde0752789519b9698563c4a1d63b0a9d733cb4af036be3e3fe9746ad41366ad452744.jpg',
+    desc: 'El horno es el corazón del taller. Ciencia del calor: distribución de temperatura, diseño de curvas eficientes y mantenimiento preventivo para evitar fallas costosas.',
+    modules: [
+      'Mecanismos de transmisión de calor, geometría, aislación y gradientes',
+      'Fundamentos de diseño y operación del horno',
+      'Vida útil, elementos resistivos y mantenimiento preventivo/correctivo',
+      'Métodos de control: conos pirométricos, controles electrónicos',
+      'Cálculos térmicos y dinámica del calor',
+      'Planificación de curvas de temperatura y optimización de carga',
+    ],
+    priceWas: '$120.000',
+    price: '$90.000 ARS',
+    url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/hornos-y-horneadas-individual',
+  },
+  'engobes': {
+    tag: 'Autogestivo · On demand',
+    title: 'Engobes',
+    img: 'https://d22fxaf9t8d39k.cloudfront.net/1a593d88f164956ec913178a2f908a7843c6e28e43138ec26f48ca7d7148b16f452744.png',
+    desc: 'Los engobes no son "barro con color": son materiales complejos que requieren formulación equilibrada. Química de silicatos para acabados predecibles y profesionales.',
+    modules: [
+      'Sílico-aluminatos y materias primas (plásticos, agregados, fundentes)',
+      'Reorganización de fórmulas y análisis de diagramas ternarios',
+      'Desarrollo de color: estudios de mezcla y análisis de cromóforos',
+      'Propiedades reológicas, poder de cobertura y procesamiento',
+    ],
+    priceWas: '$120.000',
+    price: '$90.000 ARS',
+    url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/engobes-individual',
+  },
+  'procesos': {
+    tag: 'Autogestivo · On demand',
+    title: 'Introducción a los Procesos Cerámicos',
+    img: 'https://d22fxaf9t8d39k.cloudfront.net/6da008ca5620f180bff120c5b1047cb94bbf788ddaf292e1e83cc9758266ff1e452744.png',
+    desc: '"Cada pieza que se rompe en el secado, cada defecto que aparece después del horno tiene una causa. Y tiene solución." Ingeniería cerámica desde el inicio.',
+    modules: [
+      'Procesamiento de materias primas: sedimentación, purificación, mezcla, molienda',
+      'Conformado: colado, torno, prensado, extrusión + control de calidad',
+      'Secado: etapas, optimización y reducción de defectos',
+      'Cocción: teoría, planificación de curvas, atmósferas oxidante/reductora',
+    ],
+    priceWas: '$120.000',
+    price: '$90.000 ARS',
+    url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/introduccion-a-los-procesos-ceramicos-individual',
+  },
+  'tecnicos': {
+    tag: 'Autogestivo · On demand',
+    title: 'Aspectos Técnicos de la Cerámica',
+    img: 'https://d22fxaf9t8d39k.cloudfront.net/dc7efee31d7cd1a9d1b23f25843c4a43bafd4be0809b8e2c5286ea396464399b452744.png',
+    desc: 'Transición de la práctica intuitiva a la toma de decisiones informada. Para ceramistas que experimentan fallas inexplicables o siguen fórmulas sin comprenderlas.',
+    modules: [
+      'Propiedades reológicas: densidad, viscosidad, plasticidad, tixotropía',
+      'Materias primas y química: plásticos, agregados, compuestos químicos',
+      'Análisis post-cocción: densidad, porosidad, absorción de agua, contracción',
+      'Laboratorio cerámico: procedimientos y capacidad de investigación independiente',
+    ],
+    priceWas: '$120.000',
+    price: '$90.000 ARS',
+    url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/introduccion-a-los-aspectos-tecnicos-individual',
+  },
+  'quimica': {
+    tag: 'Autogestivo · On demand',
+    title: 'Química Aplicada a la Cerámica',
+    img: 'https://d22fxaf9t8d39k.cloudfront.net/473d4e49a3870b0728083ab69dbaf0f54ec9b87dd546285c8fcac7a8009aa450452744.png',
+    desc: 'Enseña a moverse más allá de recetas prestadas entendiendo la química que las gobierna. Accesible para quienes no tienen base en química y valioso para los que sí.',
+    modules: [
+      'Estructura atómica, radio atómico, electronegatividad y aplicaciones cerámicas',
+      'Tabla periódica: propiedades de elementos por grupo',
+      'Soluciones, disolventes, unidades de concentración y cálculos de precisión',
+      'Formulación de pastas, engobes y esmaltes',
+      'Metodología de ensayos sistemáticos con diagramas ternarios',
+      'Estequiometría y conversión de expresiones de óxidos',
+      'Serie de Hofmeister, pH y selección de defloculantes',
+    ],
+    priceWas: '$120.000',
+    price: '$90.000 ARS',
+    url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/quimica-aplicada-a-la-ceramica-individual',
+  },
+};
 
-document.addEventListener('DOMContentLoaded', function() {
-    initializeAnimations();
-    handleFormSubmission();
-    setupScrollToTop();
-    observeElements();
-    addParallaxEffect();
-    setupCourseModals();
-    setupHamburgerMenu();
+/* === STICKY HEADER === */
+const header = document.getElementById('site-header');
+function updateHeader() {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
+
+/* === HAMBURGER === */
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
 });
 
-// ========================================
-// ANIMACIONES INICIALES
-// ========================================
-
-function initializeAnimations() {
-    // Animar elementos con fade-in class
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.animation = 'fadeInUp 0.8s ease-out forwards';
-    });
-}
-
-// ========================================
-// INTERSECTION OBSERVER PARA SCROLL ANIMATIONS
-// ========================================
-
-function observeElements() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Animar sección cuando entra en viewport
-                const section = entry.target;
-                section.style.opacity = '1';
-                
-                // Animar elementos dentro de la sección
-                const children = section.querySelectorAll('.service-card, .contact-item, .form-group, .about-features li');
-                children.forEach((child, index) => {
-                    child.style.opacity = '1';
-                });
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    // Observar todas las secciones
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-    });
-
-    // Observar tarjetas de servicio
-    document.querySelectorAll('.service-card').forEach(card => {
-        observer.observe(card);
-    });
-
-    // Observar tarjetas de cursos
-    document.querySelectorAll('.course-card').forEach(card => {
-        observer.observe(card);
-    });
-
-    // Observar items de contacto
-    document.querySelectorAll('.contact-item').forEach(item => {
-        observer.observe(item);
-    });
-}
-
-// ========================================
-// EFECTO PARALLAX EN HERO
-// ========================================
-
-function addParallaxEffect() {
-    const hero = document.querySelector('.hero');
-    
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.pageYOffset;
-        const heroTop = hero.offsetTop;
-        
-        if (scrollPosition < heroTop + hero.offsetHeight) {
-            hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
-        }
-    });
-}
-
-// ========================================
-// SMOOTH SCROLL Y NAVEGACIÓN
-// ========================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 70; // Considerar el header sticky
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+    document.body.style.overflow = '';
+  });
 });
 
-// ========================================
-// FORMULARIO DE CONTACTO CON VALIDACIÓN
-// ========================================
-
-function handleFormSubmission() {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Obtener valores
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value.trim();
-
-        // Validar campos
-        if (!validateForm(name, email, service, message)) {
-            return;
-        }
-
-        // Crear mensaje para WhatsApp
-        const whatsappMessage = `*Nuevo Mensaje desde la Web* 📩\n\n` +
-            `*Nombre:* ${name}\n` +
-            `*Email:* ${email}\n` +
-            `${phone ? `*Teléfono:* ${phone}\n` : ''}` +
-            `*Servicio de Interés:* ${getServiceName(service)}\n\n` +
-            `*Mensaje:*\n${message}`;
-
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        const whatsappURL = `https://wa.me/34XXXXXXXXXX?text=${encodedMessage}`;
-
-        // Mostrar confirmación antes de abrir WhatsApp
-        showSuccessMessage('¡Enviando tu mensaje por WhatsApp!');
-
-        // Abrir WhatsApp con pequeño delay
-        setTimeout(() => {
-            window.open(whatsappURL, '_blank');
-            form.reset();
-            clearInputErrors();
-        }, 300);
-    });
-
-    // Validación en tiempo real
-    const inputs = form.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            validateInput(this);
-        });
-        input.addEventListener('focus', function() {
-            this.classList.remove('invalid');
-        });
-    });
-}
-
-// ========================================
-// VALIDACIÓN DEL FORMULARIO
-// ========================================
-
-function validateForm(name, email, service, message) {
-    let isValid = true;
-
-    // Validar nombre
-    if (name.length < 3) {
-        showError('name', 'El nombre debe tener al menos 3 caracteres');
-        isValid = false;
+/* === REVEAL ON SCROLL === */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
+      const idx = siblings.indexOf(entry.target);
+      entry.target.style.transitionDelay = `${idx * 0.08}s`;
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
+  });
+}, { threshold: 0.1 });
 
-    // Validar email
-    if (!validateEmail(email)) {
-        showError('email', 'Por favor ingresa un email válido');
-        isValid = false;
-    }
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Validar servicio
-    if (!service) {
-        showError('service', 'Por favor selecciona un servicio');
-        isValid = false;
-    }
+/* === MODAL === */
+const overlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+const modalClose = document.getElementById('modal-close');
 
-    // Validar mensaje
-    if (message.length < 10) {
-        showError('message', 'El mensaje debe tener al menos 10 caracteres');
-        isValid = false;
-    }
+function openModal(id) {
+  const c = courses[id];
+  if (!c) return;
 
-    return isValid;
+  modalContent.innerHTML = `
+    <img src="${c.img}" alt="${c.title}" class="modal-img">
+    <p class="modal-tag">${c.tag}</p>
+    <h2 class="modal-title">${c.title}</h2>
+    <p class="modal-desc">${c.desc}</p>
+    <p class="modal-modules-title">Contenido del curso</p>
+    <ul class="modal-modules">
+      ${c.modules.map(m => `<li>${m}</li>`).join('')}
+    </ul>
+    <div class="modal-footer">
+      <div class="modal-price-block">
+        <del>${c.priceWas}</del>
+        <strong>${c.price}</strong>
+      </div>
+      <a href="${c.url}" class="btn btn-primary" target="_blank" rel="noopener">Inscribirse →</a>
+    </div>
+  `;
+
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
 }
 
-function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+function closeModal() {
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
 }
 
-function validateInput(input) {
-    if (input.id === 'name' && input.value.trim().length < 3) {
-        input.classList.add('invalid');
-        return false;
-    }
-    if (input.id === 'email' && !validateEmail(input.value)) {
-        input.classList.add('invalid');
-        return false;
-    }
-    if (input.id === 'message' && input.value.trim().length < 10) {
-        input.classList.add('invalid');
-        return false;
-    }
-    
-    input.classList.add('valid');
-    input.classList.remove('invalid');
-    return true;
-}
-
-function showError(fieldId, message) {
-    const field = document.getElementById(fieldId);
-    field.classList.add('invalid');
-    field.classList.remove('valid');
-
-    // Mostrar tooltip de error
-    let errorDiv = field.nextElementSibling;
-    if (errorDiv && errorDiv.classList.contains('error-message')) {
-        errorDiv.remove();
-    }
-
-    const error = document.createElement('div');
-    error.className = 'error-message';
-    error.textContent = message;
-    error.style.cssText = `
-        color: #e74c3c;
-        font-size: 0.85rem;
-        margin-top: 0.25rem;
-        animation: fadeInUp 0.3s ease-out;
-    `;
-    field.after(error);
-}
-
-function clearInputErrors() {
-    document.querySelectorAll('.error-message').forEach(el => el.remove());
-}
-
-// ========================================
-// MENSAJES DE ÉXITO
-// ========================================
-
-function showSuccessMessage(message) {
-    const notification = document.createElement('div');
-    notification.className = 'success-notification';
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 2rem;
-        background-color: #27ae60;
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
-        z-index: 2000;
-        animation: slideInRight 0.5s ease-out;
-        font-weight: 600;
-    `;
-
-    document.body.appendChild(notification);
-
-    setTimeout(() => {
-        notification.style.animation = 'slideInRight 0.5s ease-out reverse';
-        setTimeout(() => notification.remove(), 500);
-    }, 3000);
-}
-
-// ========================================
-// OBTENER NOMBRE DEL SERVICIO
-// ========================================
-
-function getServiceName(serviceValue) {
-    const services = {
-        'cursos': '📚 Cursos Especializados',
-        'asesoria': '💡 Asesoría Técnica',
-        'investigacion': '🧪 Investigación Aplicada',
-        'otro': 'Otro'
-    };
-    return services[serviceValue] || serviceValue;
-}
-
-// ========================================
-// BOTÓN SCROLL TO TOP
-// ========================================
-
-function setupScrollToTop() {
-    const scrollButton = document.createElement('div');
-    scrollButton.className = 'scroll-to-top';
-    scrollButton.innerHTML = '↑';
-    document.body.appendChild(scrollButton);
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollButton.classList.add('show');
-        } else {
-            scrollButton.classList.remove('show');
-        }
-    });
-
-    scrollButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// ========================================
-// EFECTOS DE HOVER EN TARJETAS
-// ========================================
-
-document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.animation = 'pulse 0.6s ease-in-out';
-    });
+document.querySelectorAll('[data-modal]').forEach(btn => {
+  btn.addEventListener('click', () => openModal(btn.dataset.modal));
 });
 
-// ========================================
-// CONTADOR SIMPLE PARA STATS (OPCIONAL)
-// ========================================
+modalClose.addEventListener('click', closeModal);
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-function animateCounters() {
-    const counters = document.querySelectorAll('.counter');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.dataset.target);
-        const duration = 2000; // 2 segundos
-        const increment = target / (duration / 16); // 60fps
+/* === SCROLL TOP === */
+const scrollTop = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+  scrollTop.classList.toggle('show', window.scrollY > 400);
+}, { passive: true });
+scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        let current = 0;
+/* === CONTACT FORM === */
+const form = document.getElementById('contact-form');
+const formSuccess = document.getElementById('form-success');
 
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                counter.textContent = Math.floor(current) + '+';
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target + '+';
-            }
-        };
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
 
-        updateCounter();
-    });
-}
-
-// ========================================
-// EFECTO RIPPLE EN BOTONES
-// ========================================
-
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-
-        ripple.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            left: ${x}px;
-            top: ${y}px;
-            pointer-events: none;
-            animation: ripple 0.6s ease-out;
-        `;
-
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
-    });
+  setTimeout(() => {
+    form.reset();
+    btn.textContent = 'Enviar mensaje';
+    btn.disabled = false;
+    formSuccess.classList.add('show');
+    setTimeout(() => formSuccess.classList.remove('show'), 5000);
+  }, 900);
 });
-
-// Agregar animación ripple al CSS dinámicamente
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-    
-    .error-message {
-        animation: fadeInUp 0.3s ease-out;
-    }
-`;
-document.head.appendChild(style);
-
-// ========================================
-// MODALES DE CURSOS
-// ========================================
-
-function setupCourseModals() {
-    const modal = document.getElementById('courseModal');
-    const closeBtn = document.querySelector('.close');
-    const openButtons = document.querySelectorAll('.open-modal');
-
-    const courseData = {
-        pastas: {
-            title: 'El Mundo de las Pastas Cerámicas',
-            description: 'Aprende a crear tus propias pastas cerámicas y domina las temperaturas de baja, media y alta. Este curso te brinda la experiencia de casi 30 años de investigación y experimentación.',
-            content: [
-                'Definición de pastas cerámicas y cuerpos cerámicos',
-                'Temperatura de maduración, vitrificación y fusión',
-                'Componentes y modificación de pastas',
-                'Procesos de mezclado, tamizado y secado',
-                'Fórmulas para baja, media y alta temperatura',
-                'Evaluación de pastas y pruebas de calidad',
-                'Guía completa de pastas cerámicas'
-            ],
-            duration: '6 horas (2 sesiones de 3 horas)',
-            price: '$95 USD',
-            target: 'Ceramistas, profesionales y entusiastas de la cerámica'
-        },
-        esmaltado: {
-            title: 'Técnicas de Esmaltado Avanzado',
-            description: 'Domina todas las técnicas de esmaltado, combinaciones de colores, efectos especiales y acabados profesionales en tus piezas cerámicas.',
-            content: [
-                'Tipos de esmaltes y composición química',
-                'Preparación y aplicación de esmaltes',
-                'Técnicas de inmersión, pulverización y vertido',
-                'Combinación de colores y efectos visuales',
-                'Cristalización y efectos especiales',
-                'Pruebas de compatibilidad y contracción',
-                'Material audiovisual y galería de ejemplos'
-            ],
-            duration: '6 horas (2 sesiones de 3 horas)',
-            price: '$85 USD',
-            target: 'Ceramistas con experiencia básica'
-        },
-        hornos: {
-            title: 'Control de Hornos y Cocción',
-            description: 'Aprende el funcionamiento de diferentes tipos de hornos, controladores de temperatura y optimiza tus procesos de cocción para resultados profesionales.',
-            content: [
-                'Tipos de hornos: horno eléctrico, gas y leña',
-                'Componentes y funcionamiento',
-                'Control de temperatura y curvas de cocción',
-                'Cargado y descargado de piezas',
-                'Mantenimiento y seguridad',
-                'Solución de problemas comunes',
-                'Datos técnicos y referencias'
-            ],
-            duration: '5 horas',
-            price: '$75 USD',
-            target: 'Ceramistas y profesionales de la industria'
-        },
-        quimica: {
-            title: 'Química Cerámica Aplicada',
-            description: 'Entiende los fundamentos químicos detrás de los materiales cerámicos, sus reacciones y cómo aplicar este conocimiento en tus procesos.',
-            content: [
-                'Composición química de materiales cerámicos',
-                'Reacciones químicas durante la cocción',
-                'Óxidos y sus efectos en los esmaltes',
-                'Equilibrio ácido-base en las pastas',
-                'Propiedades físicas y químicas',
-                'Cálculos de fórmulas cerámicas',
-                'Bibliografía y recursos avanzados'
-            ],
-            duration: '6 horas',
-            price: '$90 USD',
-            target: 'Profesionales interesados en la ciencia de la cerámica'
-        },
-        modelado: {
-            title: 'Modelado y Torno de Cerámica',
-            description: 'Técnicas avanzadas de modelado a mano libre, trabajo con torno cerámico y creación de formas complejas y profesionales.',
-            content: [
-                'Fundamentos de modelado a mano',
-                'Técnicas de centrado en el torno',
-                'Levantado y adelgazamiento de paredes',
-                'Creación de formas cilíndricas y esféricas',
-                'Asas, picos y elementos decorativos',
-                'Acabados y detalles profesionales',
-                'Ejercicios prácticos y demostraciones'
-            ],
-            duration: '8 horas (2 días)',
-            price: '$80 USD',
-            target: 'Principiantes y ceramistas con experiencia'
-        },
-        porcelana: {
-            title: 'Porcelana Fina y Refinada',
-            description: 'Especialízate en trabajar porcelana de alta calidad, dominando técnicas refinadas para crear piezas de lujo y exclusivas.',
-            content: [
-                'Características únicas de la porcelana',
-                'Tipos de porcelana y aplicaciones',
-                'Preparación y procesamiento de porcelana',
-                'Técnicas de modelado fino',
-                'Esmaltes y decoraciones especiales',
-                'Acabados de lujo y dorados',
-                'Casos de éxito y portfolio de obras'
-            ],
-            duration: '7 horas',
-            price: '$110 USD',
-            target: 'Ceramistas profesionales y artesanos de lujo'
-        }
-    };
-
-    // Abrir modal
-    openButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const courseKey = this.dataset.course;
-            const course = courseData[courseKey];
-
-            if (course) {
-                document.getElementById('modalTitle').textContent = course.title;
-                document.getElementById('modalDescription').textContent = course.description;
-                document.getElementById('modalDuration').textContent = course.duration;
-                document.getElementById('modalPrice').textContent = course.price;
-                document.getElementById('modalTarget').textContent = course.target;
-
-                const contentList = document.getElementById('modalContent');
-                contentList.innerHTML = '';
-                course.content.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    contentList.appendChild(li);
-                });
-
-                modal.classList.add('show');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
-
-    // Cerrar modal
-    closeBtn.addEventListener('click', function() {
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto';
-    });
-
-    // Cerrar al hacer click fuera del modal
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
-    });
-
-    // Cerrar al presionar ESC
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
-    });
-}
-
-// ========================================
-// HAMBURGER MENU
-// ========================================
-
-function setupHamburgerMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    const navItems = navLinks.querySelectorAll('a');
-
-    // Toggle menu
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-
-    // Cerrar menu al hacer click en un enlace
-    navItems.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
-
-    // Cerrar menu al hacer scroll
-    window.addEventListener('scroll', function() {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
-}
-
-// ========================================
-// INICIAR APLICACIÓN
-// ========================================
-
-console.log('✨ Fresnos Pottery - Sitio web cargado exitosamente');

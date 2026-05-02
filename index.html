@@ -3,254 +3,445 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresnos Pottery - Cursos y Asesorías</title>
+    <meta name="description" content="Fresnos Pottery — Cursos online de cerámica científica. Formulación de pastas, esmaltes, engobes y procesos cerámicos.">
+    <title>Fresnos Pottery — Cerámica desde la Ciencia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">🏺 Fresnos Pottery</div>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+
+    <!-- NAV -->
+    <header class="site-header" id="site-header">
+        <div class="nav-wrap">
+            <a href="#inicio" class="nav-logo">Fresnos Pottery</a>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
             </button>
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#escuela">Escuela</a></li>
                 <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#incluye">Qué incluye</a></li>
+                <li><a href="#contacto" class="nav-cta">Contacto</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero" id="inicio">
-        <div class="container">
-            <h1>Domina la Cerámica desde la Ciencia</h1>
-            <p>Aprende los fundamentos científicos de la cerámica con expertos en el campo. Cursos y asesorías especializadas para profesionales y entusiastas.</p>
-            <div class="cta-buttons">
-                <a href="#contacto" class="btn btn-primary">Conocer Más</a>
-                <a href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20vuestros%20servicios" class="btn btn-secondary" target="_blank">Contáctanos en WhatsApp</a>
+        <div class="hero-content">
+            <p class="tag">Escuela Online · Autogestivo · Comunidad activa</p>
+            <h1>Domina la cerámica<br><em>desde la ciencia</em></h1>
+            <p class="hero-lead">Cursos especializados en formulación, esmaltes, pastas y procesos cerámicos. Dejá de adivinar y empezá a decidir con criterio técnico.</p>
+            <div class="hero-btns">
+                <a href="#escuela" class="btn btn-primary">Explorar cursos</a>
+                <a href="https://www.instagram.com/fresnos.pottery/" target="_blank" rel="noopener" class="btn btn-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    @fresnos.pottery
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><strong>12+</strong><span>Cursos</span></div>
+                <div class="stat-div"></div>
+                <div class="stat"><strong>100%</strong><span>On demand</span></div>
+                <div class="stat-div"></div>
+                <div class="stat"><strong>12</strong><span>Cuotas</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="https://d22fxaf9t8d39k.cloudfront.net/1f5c20201e0502f5448e77ac9dfc5965267b406d7279c4868d1383960f3ef24a452744.jpg" alt="Recubrimientos decorativos Fresnos Pottery" class="hero-img">
+            <div class="hero-badge">
+                <strong>23% OFF</strong>
+                <span>en todos los packs</span>
             </div>
         </div>
     </section>
 
-    <!-- Sección Sobre Nosotros -->
-    <section class="about" id="sobre">
-        <div class="container">
-            <h2>Sobre Nosotros</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Expertos en Cerámica y Pottery</h3>
-                    <p>Somos una empresa dedicada a la enseñanza y asesoría en cerámica desde una perspectiva científica y técnica. Nuestro objetivo es acercar el conocimiento de los procesos cerámicos, sus propiedades y aplicaciones a profesionales y estudiantes del sector.</p>
-                    <p>Con años de experiencia en investigación y educación, ofrecemos programas diseñados para profundizar en la comprensión de los materiales cerámicos y sus múltiples aplicaciones.</p>
-                    <ul class="about-features">
-                        <li>Cursos especializados en ciencia de materiales</li>
-                        <li>Asesoría técnica personalizada</li>
-                        <li>Formación en procesos de producción</li>
-                        <li>Investigación aplicada a la cerámica</li>
-                    </ul>
+    <!-- PILLARS -->
+    <section class="pillars">
+        <div class="wrap pillars-inner">
+            <div class="pillar reveal">
+                <div class="p-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 3h6M9 3v7L5 16a2 2 0 0 0 1.8 2.9h10.4A2 2 0 0 0 19 16l-4-6V3"/><line x1="5.5" y1="14" x2="18.5" y2="14"/></svg>
                 </div>
-                <div class="about-image">🔬</div>
+                <h3>Ciencia aplicada</h3>
+                <p>Cada concepto parte de la química y física real de los materiales cerámicos.</p>
+            </div>
+            <div class="pillar reveal">
+                <div class="p-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <h3>Resultados reproducibles</h3>
+                <p>Formulás con criterio técnico, no intuición. Cada variable bajo control.</p>
+            </div>
+            <div class="pillar reveal">
+                <div class="p-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Comunidad activa</h3>
+                <p>Google Classroom con consultas a docentes y red de ceramistas en todo el mundo.</p>
             </div>
         </div>
     </section>
 
-    <!-- Sección Servicios -->
-    <section class="services" id="servicios">
-        <div class="container">
-            <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📚</div>
-                    <h3>Cursos Especializados</h3>
-                    <p>Programas de formación en cerámica científica, desde niveles introductorios hasta avanzados. Cubre propiedades de materiales, técnicas de procesamiento y control de calidad.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💡</div>
-                    <h3>Asesoría Técnica</h3>
-                    <p>Consultoría personalizada para empresas y profesionales. Resolvemos problemas específicos en procesos cerámicos y optimizamos tus operaciones.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🧪</div>
-                    <h3>Investigación Aplicada</h3>
-                    <p>Desarrollo de soluciones innovadoras basadas en investigación científica. Adaptamos la teoría a tus necesidades prácticas.</p>
-                </div>
+    <!-- ESCUELA: PACKS -->
+    <section class="escuela" id="escuela">
+        <div class="wrap">
+            <header class="section-head reveal">
+                <span class="eyebrow">Especializaciones · 3 cursos c/u · 23% OFF</span>
+                <h2>Escuela de Cerámica</h2>
+                <p>Tres especializaciones completas para alcanzar independencia total en el taller.</p>
+            </header>
+
+            <div class="packs-grid">
+
+                <article class="pack-card reveal">
+                    <div class="pack-badge">23% OFF</div>
+                    <figure class="pack-fig">
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/7dd73b999532449376628103bb703d419c0b4d31c7b798919bab91916a769908452744.jpg" alt="Pack Formulaciones" loading="lazy">
+                    </figure>
+                    <div class="pack-body">
+                        <h3>Formulaciones</h3>
+                        <p>Diseñá cada elemento de tu obra. La independencia total del ceramista.</p>
+                        <ul class="pack-list">
+                            <li>Formulación de Pastas</li>
+                            <li>Engobes</li>
+                            <li>Esmaltes</li>
+                        </ul>
+                        <div class="pack-price">
+                            <del>$320.000</del>
+                            <strong>$245.000 ARS</strong>
+                        </div>
+                        <a href="https://fresnospottery.empretienda.com.ar/escuela-de-ceramica/formulaciones-pack-x3" class="btn btn-primary btn-full" target="_blank" rel="noopener">Inscribirse</a>
+                    </div>
+                </article>
+
+                <article class="pack-card reveal">
+                    <div class="pack-badge">23% OFF</div>
+                    <figure class="pack-fig">
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/1f5c20201e0502f5448e77ac9dfc5965267b406d7279c4868d1383960f3ef24a452744.jpg" alt="Pack Recubrimientos Decorativos" loading="lazy">
+                    </figure>
+                    <div class="pack-body">
+                        <h3>Recubrimientos Decorativos</h3>
+                        <p>Desarrollá una identidad visual única con acabados superficiales propios.</p>
+                        <ul class="pack-list">
+                            <li>Engobes</li>
+                            <li>Esmaltes</li>
+                            <li>Esmaltes Cristalinos</li>
+                        </ul>
+                        <div class="pack-price">
+                            <del>$320.000</del>
+                            <strong>$245.000 ARS</strong>
+                        </div>
+                        <a href="https://fresnospottery.empretienda.com.ar/escuela-de-ceramica/recubrimientos-decorativos-pack-x3" class="btn btn-primary btn-full" target="_blank" rel="noopener">Inscribirse</a>
+                    </div>
+                </article>
+
+                <article class="pack-card reveal">
+                    <div class="pack-badge">23% OFF</div>
+                    <figure class="pack-fig">
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/967f853832380bce4d81e4fedcead3877bf9fa50003209c15527c69962f7a077452744.jpg" alt="Pack La ciencia detrás del arte" loading="lazy">
+                    </figure>
+                    <div class="pack-body">
+                        <h3>La ciencia detrás del arte</h3>
+                        <p>De la intuición al laboratorio. Para ceramistas que llegaron a un techo técnico.</p>
+                        <ul class="pack-list">
+                            <li>Aspectos Técnicos</li>
+                            <li>Procesos Cerámicos</li>
+                            <li>Química Aplicada</li>
+                        </ul>
+                        <div class="pack-price">
+                            <del>$320.000</del>
+                            <strong>$245.000 ARS</strong>
+                        </div>
+                        <a href="https://fresnospottery.empretienda.com.ar/escuela-de-ceramica/la-ciencia-detras-del-arte-pack-x3" class="btn btn-primary btn-full" target="_blank" rel="noopener">Inscribirse</a>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <!-- Sección Cursos -->
+    <!-- CURSOS INDIVIDUALES -->
     <section class="cursos" id="cursos">
-        <div class="container">
-            <h2>Nuestros Cursos</h2>
+        <div class="wrap">
+            <header class="section-head reveal">
+                <span class="eyebrow">Capacitaciones individuales</span>
+                <h2>Cursos à la carte</h2>
+                <p>Elegí exactamente lo que necesitás ahora.</p>
+            </header>
+
             <div class="courses-grid">
-                <div class="course-card">
-                    <div class="course-image">🏺</div>
-                    <h3>El Mundo de las Pastas Cerámicas</h3>
-                    <p>Aprende a crear tus propias pastas cerámicas y domina las temperaturas de baja, media y alta.</p>
-                    <div class="course-price">$95 USD</div>
-                    <button class="btn btn-primary open-modal" data-course="pastas">Ver Detalles</button>
-                </div>
 
-                <div class="course-card">
-                    <div class="course-image">🎨</div>
-                    <h3>Técnicas de Esmaltado Avanzado</h3>
-                    <p>Domina las técnicas de esmaltado, combinaciones de colores y efectos especiales en cerámica.</p>
-                    <div class="course-price">$85 USD</div>
-                    <button class="btn btn-primary open-modal" data-course="esmaltado">Ver Detalles</button>
-                </div>
+                <article class="course-card reveal">
+                    <figure>
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/a8e685069862c7ea3c77e73c411b84d8b601af53aaa857be0d943e8b0254efbb452744.png" alt="Materias Primas" loading="lazy">
+                        <span class="c-badge">Seminario · 30/5</span>
+                    </figure>
+                    <div class="c-body">
+                        <h3>Materias Primas</h3>
+                        <p>De la extracción del barro a las reacciones en el horno. De adivinar a decidir.</p>
+                        <div class="c-footer">
+                            <div class="c-price"><del>$90.000</del> <strong>$65.000 ARS</strong></div>
+                            <button class="btn-link" data-modal="materias-primas">Ver detalles →</button>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="course-card">
-                    <div class="course-image">⚙️</div>
-                    <h3>Control de Hornos y Cocción</h3>
-                    <p>Aprende el funcionamiento de hornos cerámicos y optimiza tus procesos de cocción.</p>
-                    <div class="course-price">$75 USD</div>
-                    <button class="btn btn-primary open-modal" data-course="hornos">Ver Detalles</button>
-                </div>
+                <article class="course-card reveal">
+                    <figure>
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/06b88e4e750bdf37010305c87351e911d1d28cee106ac55b1941d6b2cc770fa5452744.jpg" alt="Esmaltes" loading="lazy">
+                        <span class="c-badge">On demand</span>
+                    </figure>
+                    <div class="c-body">
+                        <h3>Esmaltes</h3>
+                        <p>Cómo interactúan los óxidos para predecir y formular sin depender de recetas ajenas.</p>
+                        <div class="c-footer">
+                            <div class="c-price"><del>$120.000</del> <strong>$90.000 ARS</strong></div>
+                            <button class="btn-link" data-modal="esmaltes">Ver detalles →</button>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="course-card">
-                    <div class="course-image">🔬</div>
-                    <h3>Química Cerámica Aplicada</h3>
-                    <p>Entiende la química detrás de los materiales cerámicos y sus reacciones.</p>
-                    <div class="course-price">$90 USD</div>
-                    <button class="btn btn-primary open-modal" data-course="quimica">Ver Detalles</button>
-                </div>
+                <article class="course-card reveal">
+                    <figure>
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/a3eead5decc0a376e1a76298f8648d48da3cb150278d0e2f09aea46286a4b005452744.jpg" alt="Formulación de Pastas" loading="lazy">
+                        <span class="c-badge">On demand</span>
+                    </figure>
+                    <div class="c-body">
+                        <h3>Formulación de Pastas</h3>
+                        <p>Ingeniería de materiales para crear arcillas propias: gres, porcelana, loza y más.</p>
+                        <div class="c-footer">
+                            <div class="c-price"><del>$120.000</del> <strong>$90.000 ARS</strong></div>
+                            <button class="btn-link" data-modal="pastas">Ver detalles →</button>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="course-card">
-                    <div class="course-image">🌊</div>
-                    <h3>Modelado y Torno de Cerámica</h3>
-                    <p>Técnicas avanzadas de modelado a mano y trabajo con torno cerámico.</p>
-                    <div class="course-price">$80 USD</div>
-                    <button class="btn btn-primary open-modal" data-course="modelado">Ver Detalles</button>
-                </div>
+                <article class="course-card reveal">
+                    <figure>
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/c4979bc379da5ba98c3a234ce1225cfa63889060d85c729236774e9c245ee0c1452744.jpg" alt="Esmaltes Cristalinos" loading="lazy">
+                        <span class="c-badge">On demand</span>
+                    </figure>
+                    <div class="c-body">
+                        <h3>Esmaltes Cristalinos</h3>
+                        <p>Lograr cristales definidos no es suerte: es entender cómo los átomos se acomodan en el horno.</p>
+                        <div class="c-footer">
+                            <div class="c-price"><del>$120.000</del> <strong>$90.000 ARS</strong></div>
+                            <button class="btn-link" data-modal="cristalinos">Ver detalles →</button>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="course-card">
-                    <div class="course-image">✨</div>
-                    <h3>Porcelana Fina y Refinada</h3>
-                    <p>Especialízate en trabajar porcelana de alta calidad y técnicas refinadas.</p>
-                    <div class="course-price">$110 USD</div>
-                    <button class="btn btn-primary open-modal" data-course="porcelana">Ver Detalles</button>
+                <article class="course-card reveal">
+                    <figure>
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/fde0752789519b9698563c4a1d63b0a9d733cb4af036be3e3fe9746ad41366ad452744.jpg" alt="Hornos y Horneadas" loading="lazy">
+                        <span class="c-badge">On demand</span>
+                    </figure>
+                    <div class="c-body">
+                        <h3>Hornos y Horneadas</h3>
+                        <p>El horno es el corazón del taller. Diseñá curvas eficientes y eliminá las sorpresas.</p>
+                        <div class="c-footer">
+                            <div class="c-price"><del>$120.000</del> <strong>$90.000 ARS</strong></div>
+                            <button class="btn-link" data-modal="hornos">Ver detalles →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card reveal">
+                    <figure>
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/1a593d88f164956ec913178a2f908a7843c6e28e43138ec26f48ca7d7148b16f452744.png" alt="Engobes" loading="lazy">
+                        <span class="c-badge">On demand</span>
+                    </figure>
+                    <div class="c-body">
+                        <h3>Engobes</h3>
+                        <p>No son "barro con color": son materiales complejos que requieren formulación equilibrada.</p>
+                        <div class="c-footer">
+                            <div class="c-price"><del>$120.000</del> <strong>$90.000 ARS</strong></div>
+                            <button class="btn-link" data-modal="engobes">Ver detalles →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card reveal">
+                    <figure>
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/6da008ca5620f180bff120c5b1047cb94bbf788ddaf292e1e83cc9758266ff1e452744.png" alt="Procesos Cerámicos" loading="lazy">
+                        <span class="c-badge">On demand</span>
+                    </figure>
+                    <div class="c-body">
+                        <h3>Procesos Cerámicos</h3>
+                        <p>Cada pieza rota tiene una causa. Y tiene solución. Ingeniería cerámica desde el inicio.</p>
+                        <div class="c-footer">
+                            <div class="c-price"><del>$120.000</del> <strong>$90.000 ARS</strong></div>
+                            <button class="btn-link" data-modal="procesos">Ver detalles →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card reveal">
+                    <figure>
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/dc7efee31d7cd1a9d1b23f25843c4a43bafd4be0809b8e2c5286ea396464399b452744.png" alt="Aspectos Técnicos" loading="lazy">
+                        <span class="c-badge">On demand</span>
+                    </figure>
+                    <div class="c-body">
+                        <h3>Aspectos Técnicos</h3>
+                        <p>De la práctica intuitiva a la toma de decisiones informada. Reología, materias primas y laboratorio.</p>
+                        <div class="c-footer">
+                            <div class="c-price"><del>$120.000</del> <strong>$90.000 ARS</strong></div>
+                            <button class="btn-link" data-modal="tecnicos">Ver detalles →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card reveal">
+                    <figure>
+                        <img src="https://d22fxaf9t8d39k.cloudfront.net/473d4e49a3870b0728083ab69dbaf0f54ec9b87dd546285c8fcac7a8009aa450452744.png" alt="Química Aplicada" loading="lazy">
+                        <span class="c-badge">On demand</span>
+                    </figure>
+                    <div class="c-body">
+                        <h3>Química Aplicada</h3>
+                        <p>Más allá de recetas prestadas. La química que gobierna cada material cerámico.</p>
+                        <div class="c-footer">
+                            <div class="c-price"><del>$120.000</del> <strong>$90.000 ARS</strong></div>
+                            <button class="btn-link" data-modal="quimica">Ver detalles →</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INCLUDES -->
+    <section class="includes" id="incluye">
+        <div class="wrap">
+            <header class="section-head reveal light">
+                <span class="eyebrow">Todos los cursos incluyen</span>
+                <h2>Lo que recibís en cada curso</h2>
+            </header>
+            <div class="includes-grid">
+                <div class="inc-item reveal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                    <h3>Clases grabadas</h3>
+                    <p>Accedé cuando quieras, a tu ritmo, sin fecha de vencimiento.</p>
+                </div>
+                <div class="inc-item reveal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <h3>Comunidad Google Classroom</h3>
+                    <p>Intercambio con otros ceramistas y consultas directas a docentes.</p>
+                </div>
+                <div class="inc-item reveal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    <h3>Guías PDF descargables</h3>
+                    <p>Material técnico de apoyo para consultar en el taller cuando lo necesitás.</p>
+                </div>
+                <div class="inc-item reveal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    <h3>Hasta 12 cuotas</h3>
+                    <p>Mercado Pago, tarjeta o transferencia bancaria. Accesible para todos.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal de Cursos -->
-    <div id="courseModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-body">
-                <h2 id="modalTitle"></h2>
-                <p id="modalDescription"></p>
-                <div class="modal-details">
-                    <h3>Contenido del Curso:</h3>
-                    <ul id="modalContent"></ul>
-                </div>
-                <div class="modal-info">
-                    <div class="info-item">
-                        <h4>📅 Duración</h4>
-                        <p id="modalDuration"></p>
-                    </div>
-                    <div class="info-item">
-                        <h4>💰 Precio</h4>
-                        <p id="modalPrice"></p>
-                    </div>
-                    <div class="info-item">
-                        <h4>👥 Dirigido a</h4>
-                        <p id="modalTarget"></p>
-                    </div>
-                </div>
-                <a href="#contacto" class="btn btn-primary" style="margin-top: 2rem; width: 100%; text-align: center;">Inscribirse Ahora</a>
+    <!-- CONTACT -->
+    <section class="contact" id="contacto">
+        <div class="wrap contact-wrap">
+            <div class="contact-info reveal">
+                <span class="eyebrow">Hablemos</span>
+                <h2>¿Tenés dudas?</h2>
+                <p>Escribinos para consultar sobre cualquier curso, forma de pago o contenido.</p>
+                <a href="mailto:fresnospottery@gmail.com" class="c-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    fresnospottery@gmail.com
+                </a>
+                <a href="https://www.instagram.com/fresnos.pottery/" target="_blank" rel="noopener" class="c-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    @fresnos.pottery
+                </a>
             </div>
+            <form id="contact-form" class="contact-form reveal" novalidate>
+                <div class="fg">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="fg">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="fg">
+                    <label for="curso">Curso de interés</label>
+                    <select id="curso" name="curso">
+                        <option value="">Seleccioná un curso</option>
+                        <optgroup label="Escuela de Cerámica (Packs)">
+                            <option>Formulaciones — Pack x3</option>
+                            <option>Recubrimientos Decorativos — Pack x3</option>
+                            <option>La ciencia detrás del arte — Pack x3</option>
+                        </optgroup>
+                        <optgroup label="Capacitaciones Individuales">
+                            <option>Materias Primas (Seminario 30/5/2026)</option>
+                            <option>Esmaltes</option>
+                            <option>Formulación de Pastas</option>
+                            <option>Esmaltes Cristalinos</option>
+                            <option>Hornos y Horneadas</option>
+                            <option>Engobes</option>
+                            <option>Introducción a los Procesos Cerámicos</option>
+                            <option>Aspectos Técnicos de la Cerámica</option>
+                            <option>Química Aplicada a la Cerámica</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="fg">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="4" placeholder="¿En qué te podemos ayudar?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Enviar mensaje</button>
+                <p class="form-success" id="form-success">¡Mensaje enviado! Te responderemos pronto.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="wrap footer-inner">
+            <div>
+                <p class="footer-logo">Fresnos Pottery</p>
+                <p class="footer-tagline">Cerámica desde la ciencia.</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#escuela">Escuela</a>
+                <a href="#cursos">Cursos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/fresnos.pottery/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="mailto:fresnospottery@gmail.com" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Fresnos Pottery · Todos los derechos reservados</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+        <div class="modal-box" role="dialog" aria-modal="true" id="modal-box">
+            <button class="modal-close" id="modal-close" aria-label="Cerrar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div id="modal-content"></div>
         </div>
     </div>
 
-    <!-- Sección Contacto -->
-    <section class="contact" id="contacto">
-        <div class="container">
-            <h2>Ponte en Contacto</h2>
-            <div class="contact-wrapper">
-                <!-- Información de Contacto -->
-                <div class="contact-info">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">¿Cómo Contactarnos?</h3>
-                    
-                    <div class="contact-item">
-                        <h4>📍 Ubicación</h4>
-                        <p>Buenos Aires, Argentina</p>
-                    </div>
-
-                    <div class="contact-item">
-                        <h4>📧 Email</h4>
-                        <p><a href="mailto:info@fresnospottery.com" style="color: var(--secondary-color); text-decoration: none;">info@fresnospottery.com</a></p>
-                    </div>
-
-                    <div class="contact-item">
-                        <h4>📱 WhatsApp</h4>
-                        <a href="https://wa.me/34XXXXXXXXXX?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20vuestros%20servicios" class="whatsapp-btn" target="_blank">
-                            💬 Chatea con nosotros
-                        </a>
-                    </div>
-
-                    <div class="contact-item">
-                        <h4>� Instagram</h4>
-                        <a href="https://instagram.com/fresnospottery" class="instagram-btn" target="_blank">
-                            📱 Síguenos en Instagram
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Formulario de Contacto -->
-                <form id="contact-form">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Envíanos tu Consulta</h3>
-                    
-                    <div class="form-group">
-                        <label for="name">Nombre Completo *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Teléfono</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">Servicio de Interés *</label>
-                        <select id="service" name="service" style="width: 100%; padding: 0.8rem; border: 2px solid #E0E0E0; border-radius: 6px; font-family: inherit;" required>
-                            <option value="">Selecciona un servicio</option>
-                            <option value="cursos">Cursos Especializados</option>
-                            <option value="asesoria">Asesoría Técnica</option>
-                            <option value="investigacion">Investigación Aplicada</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Mensaje *</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Fresnos Pottery. Todos los derechos reservados.</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">Especialistas en educación y consultoría científica de cerámica</p>
-        </div>
-    </footer>
+    <!-- SCROLL TOP -->
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
