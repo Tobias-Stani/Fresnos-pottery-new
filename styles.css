@@ -866,6 +866,15 @@ em { font-style: italic; color: var(--sand); }
 }
 .pay-copy-btn:hover { border-color: var(--clay); background: var(--sand-light); }
 .pay-copy-btn.copied { color: #2e7d32; border-color: #a5d6a7; background: #e8f5e9; }
+.pay-user-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.pay-user-row svg { color: var(--sienna); flex-shrink: 0; }
+.pay-user-row strong { color: var(--ink); }
 .pay-name {
   font-size: 0.88rem;
   color: var(--muted);

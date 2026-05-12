@@ -272,12 +272,7 @@ document.querySelectorAll('.pay-btn').forEach(btn => {
 payClose.addEventListener('click', closePayment);
 payOverlay.addEventListener('click', e => { if (e.target === payOverlay) closePayment(); });
 
-payGoForm.addEventListener('click', () => {
-  closePayment();
-  setTimeout(() => {
-    document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
-  }, 200);
-});
+payGoForm.addEventListener('click', closePayment);
 
 payCopyBtn.addEventListener('click', () => {
   navigator.clipboard.writeText('Lautaro.stani@gmail.com').then(() => {
