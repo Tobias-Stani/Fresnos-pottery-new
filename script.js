@@ -16,8 +16,8 @@ const courses = {
       'Reacciones durante la cocción',
       'Interpretación de datos técnicos y curvas de cocción',
     ],
-    priceWas: '$90.000',
-    price: '$65.000 ARS',
+    priceWas: '$90 USD',
+    price: '$80 USD',
     url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/seminario-sincronico-materias-primas-3052026',
   },
   'esmaltes': {
@@ -35,8 +35,8 @@ const courses = {
       'Solución de defectos',
       'Laboratorio de control de calidad',
     ],
-    priceWas: '$120.000',
-    price: '$90.000 ARS',
+    priceWas: '$120 USD',
+    price: '$108 USD',
     url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/esmaltes-individual',
   },
   'pastas': {
@@ -52,8 +52,8 @@ const courses = {
       'Materias primas: plásticos, agregados, fundentes, texturizantes, aditivos',
       'Clasificación: loza, gres, porcelana, pastas especiales',
     ],
-    priceWas: '$120.000',
-    price: '$90.000 ARS',
+    priceWas: '$120 USD',
+    price: '$108 USD',
     url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/formulacion-de-pastas-individual',
   },
   'cristalinos': {
@@ -68,8 +68,8 @@ const courses = {
       'Parámetros de control: temperatura, reología, especies químicas',
       'Curvas de cocción: microcristales, macrocristales, efectos metálicos',
     ],
-    priceWas: '$120.000',
-    price: '$90.000 ARS',
+    priceWas: '$120 USD',
+    price: '$108 USD',
     url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/esmaltes-cristalinos-individual',
   },
   'hornos': {
@@ -85,8 +85,8 @@ const courses = {
       'Cálculos térmicos y dinámica del calor',
       'Planificación de curvas de temperatura y optimización de carga',
     ],
-    priceWas: '$120.000',
-    price: '$90.000 ARS',
+    priceWas: '$120 USD',
+    price: '$108 USD',
     url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/hornos-y-horneadas-individual',
   },
   'engobes': {
@@ -100,8 +100,8 @@ const courses = {
       'Desarrollo de color: estudios de mezcla y análisis de cromóforos',
       'Propiedades reológicas, poder de cobertura y procesamiento',
     ],
-    priceWas: '$120.000',
-    price: '$90.000 ARS',
+    priceWas: '$120 USD',
+    price: '$108 USD',
     url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/engobes-individual',
   },
   'procesos': {
@@ -115,8 +115,8 @@ const courses = {
       'Secado: etapas, optimización y reducción de defectos',
       'Cocción: teoría, planificación de curvas, atmósferas oxidante/reductora',
     ],
-    priceWas: '$120.000',
-    price: '$90.000 ARS',
+    priceWas: '$120 USD',
+    price: '$108 USD',
     url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/introduccion-a-los-procesos-ceramicos-individual',
   },
   'tecnicos': {
@@ -130,8 +130,8 @@ const courses = {
       'Análisis post-cocción: densidad, porosidad, absorción de agua, contracción',
       'Laboratorio cerámico: procedimientos y capacidad de investigación independiente',
     ],
-    priceWas: '$120.000',
-    price: '$90.000 ARS',
+    priceWas: '$120 USD',
+    price: '$108 USD',
     url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/introduccion-a-los-aspectos-tecnicos-individual',
   },
   'quimica': {
@@ -148,8 +148,8 @@ const courses = {
       'Estequiometría y conversión de expresiones de óxidos',
       'Serie de Hofmeister, pH y selección de defloculantes',
     ],
-    priceWas: '$120.000',
-    price: '$90.000 ARS',
+    priceWas: '$120 USD',
+    price: '$108 USD',
     url: 'https://fresnospottery.empretienda.com.ar/capacitaciones-individuales/quimica-aplicada-a-la-ceramica-individual',
   },
 };
@@ -195,6 +195,101 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+/* === LEAD CAPTURE MODAL — descomentar junto con el HTML cuando esté lista la access key ===
+
+const leadOverlay = document.getElementById('lead-overlay');
+const leadClose = document.getElementById('lead-close');
+const leadForm = document.getElementById('lead-form');
+const leadCursoHidden = document.getElementById('lead-curso-hidden');
+const leadCursoLabel = document.getElementById('lead-curso-label');
+const leadSubmit = document.getElementById('lead-submit');
+
+function openLead(courseName) {
+  leadCursoHidden.value = courseName || '';
+  if (courseName) {
+    leadCursoLabel.textContent = '📌 ' + courseName;
+    leadCursoLabel.classList.add('visible');
+  } else {
+    leadCursoLabel.classList.remove('visible');
+  }
+  leadForm.reset();
+  leadCursoHidden.value = courseName || '';
+  leadOverlay.classList.add('open');
+  leadOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLead() {
+  leadOverlay.classList.remove('open');
+  leadOverlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+leadClose.addEventListener('click', closeLead);
+leadOverlay.addEventListener('click', e => { if (e.target === leadOverlay) closeLead(); });
+
+leadForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  leadSubmit.textContent = 'Un momento...';
+  leadSubmit.disabled = true;
+
+  try {
+    const data = new FormData(leadForm);
+    await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+  } catch (_) {}
+
+  leadSubmit.textContent = 'Ver instrucciones de pago →';
+  leadSubmit.disabled = false;
+  closeLead();
+  setTimeout(openPayment, 250);
+});
+
+=== FIN LEAD MODAL === */
+
+/* === PAYMENT MODAL === */
+const payOverlay = document.getElementById('payment-overlay');
+const payClose = document.getElementById('payment-close');
+const payGoForm = document.getElementById('pay-go-form');
+const payCopyBtn = document.getElementById('pay-copy-btn');
+const copyLabel = document.getElementById('copy-label');
+
+function openPayment() {
+  payOverlay.classList.add('open');
+  payOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePayment() {
+  payOverlay.classList.remove('open');
+  payOverlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.pay-btn').forEach(btn => {
+  btn.addEventListener('click', openPayment);
+});
+
+payClose.addEventListener('click', closePayment);
+payOverlay.addEventListener('click', e => { if (e.target === payOverlay) closePayment(); });
+
+payGoForm.addEventListener('click', () => {
+  closePayment();
+  setTimeout(() => {
+    document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+  }, 200);
+});
+
+payCopyBtn.addEventListener('click', () => {
+  navigator.clipboard.writeText('Lautaro.stani@gmail.com').then(() => {
+    payCopyBtn.classList.add('copied');
+    copyLabel.textContent = '¡Copiado!';
+    setTimeout(() => {
+      payCopyBtn.classList.remove('copied');
+      copyLabel.textContent = 'Copiar';
+    }, 2000);
+  });
+});
+
 /* === MODAL === */
 const overlay = document.getElementById('modal-overlay');
 const modalContent = document.getElementById('modal-content');
@@ -218,13 +313,18 @@ function openModal(id) {
         <del>${c.priceWas}</del>
         <strong>${c.price}</strong>
       </div>
-      <a href="${c.url}" class="btn btn-primary" target="_blank" rel="noopener">Inscribirse →</a>
+      <button class="btn btn-primary pay-btn-modal">Inscribirse →</button>
     </div>
   `;
 
   overlay.classList.add('open');
   overlay.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+
+  modalContent.querySelector('.pay-btn-modal').addEventListener('click', () => {
+    closeModal();
+    setTimeout(openPayment, 250);
+  });
 }
 
 function closeModal() {
@@ -239,7 +339,7 @@ document.querySelectorAll('[data-modal]').forEach(btn => {
 
 modalClose.addEventListener('click', closeModal);
 overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closePayment(); } });
 
 /* === SCROLL TOP === */
 const scrollTop = document.getElementById('scroll-top');
