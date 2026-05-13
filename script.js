@@ -275,7 +275,7 @@ payOverlay.addEventListener('click', e => { if (e.target === payOverlay) closePa
 payGoForm.addEventListener('click', closePayment);
 
 payCopyBtn.addEventListener('click', () => {
-  navigator.clipboard.writeText('Lautaro.stani@gmail.com').then(() => {
+  navigator.clipboard.writeText('fresnospottery@gmail.com').then(() => {
     payCopyBtn.classList.add('copied');
     copyLabel.textContent = '¡Copiado!';
     setTimeout(() => {
@@ -343,21 +343,3 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-/* === CONTACT FORM === */
-const form = document.getElementById('contact-form');
-const formSuccess = document.getElementById('form-success');
-
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent = 'Enviando...';
-  btn.disabled = true;
-
-  setTimeout(() => {
-    form.reset();
-    btn.textContent = 'Enviar mensaje';
-    btn.disabled = false;
-    formSuccess.classList.add('show');
-    setTimeout(() => formSuccess.classList.remove('show'), 5000);
-  }, 900);
-});

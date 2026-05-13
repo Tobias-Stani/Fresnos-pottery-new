@@ -503,15 +503,24 @@ em { font-style: italic; color: var(--sand); }
   background: var(--cream);
   padding: 6rem 1.5rem;
 }
-.contact-wrap {
-  display: grid;
-  grid-template-columns: 5fr 7fr;
-  gap: 5rem;
-  align-items: start;
+.contact-center {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
 }
-.contact-info { display: flex; flex-direction: column; gap: 0.75rem; }
-.contact-info h2 { margin-bottom: 0.25rem; }
-.contact-info > p { color: var(--muted); margin-bottom: 1rem; }
+.contact-center h2 { margin-bottom: 0.1rem; }
+.contact-center > p { color: var(--muted); margin-bottom: 0.5rem; }
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
 .c-link {
   display: inline-flex;
   align-items: center;
@@ -519,52 +528,14 @@ em { font-style: italic; color: var(--sand); }
   color: var(--clay);
   font-weight: 500;
   font-size: 0.95rem;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1.25rem;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--white);
   transition: all var(--transition);
-  width: fit-content;
 }
 .c-link:hover { border-color: var(--clay); box-shadow: 0 2px 12px rgba(139,69,19,0.15); }
 
-.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
-.fg { display: flex; flex-direction: column; gap: 0.4rem; }
-.fg label { font-size: 0.85rem; font-weight: 600; color: var(--ink); }
-.fg input,
-.fg textarea,
-.fg select {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.93rem;
-  color: var(--ink);
-  background: var(--white);
-  transition: border-color var(--transition), box-shadow var(--transition);
-  appearance: none;
-}
-.fg input:focus,
-.fg textarea:focus,
-.fg select:focus {
-  outline: none;
-  border-color: var(--sienna);
-  box-shadow: 0 0 0 3px rgba(210,105,30,0.12);
-}
-.fg textarea { resize: vertical; min-height: 110px; }
-
-.form-success {
-  display: none;
-  color: #2e7d32;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: center;
-  padding: 0.75rem;
-  background: #e8f5e9;
-  border-radius: 8px;
-}
-.form-success.show { display: block; }
 
 /* === FOOTER === */
 .footer {
